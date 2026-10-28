@@ -14,6 +14,9 @@
                 <td>{{departamento.numero}}</td>
                 <td>{{departamento.nombre}}</td>
                 <td>{{departamento.localidad}}</td>
+                <td>
+                    <a [routerLink] ="['/details/' + departamento.numero + '/' + departamento.nombre + '/' + departamento.localidad]">Details</a>
+                </td>
             </tr>
         }
     </tbody>
