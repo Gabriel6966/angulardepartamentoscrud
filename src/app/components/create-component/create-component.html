@@ -7,7 +7,8 @@
     <input type="text" name="cajanombre" #cajanombre class="form-control"/>
     <label>Localidad departamento</label>
     <input type="text" name="cajalocalidad" #cajalocalidad class="form-control"/>
-    <button class="btn btn-primary">
+    <button class="btn btn-primary" (click)="insertarDepartamento()">
         New 
     </button>
+    <h2 style="color: green;">{{ mensaje }}</h2>
 </form>
