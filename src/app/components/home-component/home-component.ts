@@ -16,6 +16,18 @@ export class HomeComponent implements OnInit {
 
   constructor(private _cdr:ChangeDetectorRef, private _service:ServiceDepartamentos) { }
 
+  deleteDepartamento(id:number){
+    this._service.deleteDepartamento(id).subscribe((response)=>{
+      console.log(response);
+      this._service.getDepartamentos().subscribe((response)=>{
+        this.ArrayDepartamentos = response;
+        this._cdr.detectChanges();
+      })
+    })
+  }
+
+
+
   ngOnInit(): void {
     this._service.getDepartamentos().subscribe((response)=>{
       this.ArrayDepartamentos = response;

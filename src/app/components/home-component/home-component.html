@@ -17,6 +17,14 @@
                 <td>
                     <a [routerLink] ="['/details/' + departamento.numero + '/' + departamento.nombre + '/' + departamento.localidad]">Details</a>
                 </td>
+                <td>
+                    <a [routerLink] ="['/update/' + departamento.numero + '/' + departamento.nombre + '/' + departamento.localidad]">Update</a>
+                </td>
+                <td>
+                    <button class="btn btn-danger" (click)="deleteDepartamento(departamento.numero)">
+                        Delete
+                    </button>
+                </td>
             </tr>
         }
     </tbody>

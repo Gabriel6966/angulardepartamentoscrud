@@ -33,5 +33,24 @@ export class ServiceDepartamentos {
         return this._http.post(this.url + "api/Departamentos",json, {headers: header});
     }
 
+    findDepartamento(id: number): Observable<Departamento>{
+        return this._http.get<Departamento>(this.url + "api/Departamentos/" + id);
+
+    }
+
+
+    updateDepartamento(departamento: Departamento): Observable<any>{
+        let json = JSON.stringify(departamento);
+        let header  = new HttpHeaders();
+
+        header = header.set('Content-Type', 'application/json');
+
+        return this._http.put(this.url + "api/Departamentos/" , json, {headers: header});
+    }
+
+    deleteDepartamento(id: number): Observable<any>{
+        return this._http.delete(this.url + "api/Departamentos/" + id);
+    }
+
 
 }
