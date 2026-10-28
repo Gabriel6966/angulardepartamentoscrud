@@ -1,1 +1,10 @@
-<p>details-component works!</p>
+<h1>Detalles del componente seleccionado</h1>
+
+@if(departamento != null){
+    <h2>Id: {{departamento.numero}}</h2>
+    <h2>Nombre: {{departamento.nombre}}</h2>
+    <h2>Localidad: {{departamento.localidad}}</h2>
+    <a [routerLink] ="['/home']">Volver</a>
+}@else{
+    <h2 style="color: red;">No hay departamento seleccionado</h2>
+}
